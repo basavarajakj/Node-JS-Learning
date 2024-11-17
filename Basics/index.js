@@ -16,3 +16,19 @@ require("./batman");
  })()
 */
 require("./superman");
+
+// -----------------------------------
+
+// MODULE CACHING
+
+const superHero = require("./super-hero");
+console.log(superHero.getName()); //Batman
+superHero.setName("Superman");
+console.log(superHero.getName()); //Superman
+
+const newSuperHero = require("./super-hero");
+console.log(newSuperHero.getName()); // superman
+
+const SuHero = require("./super-hero");
+const batMan = new SuHero("Batman")
+console.log(batMan.getName());
